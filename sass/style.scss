@@ -1,0 +1,149 @@
+@use "sass:math";
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+// Primary
+$bright-orange: hsl(31, 77%, 52%);
+$dark-cyan: hsl(184, 100%, 22%);
+$very-dark-cyan: hsl(179, 100%, 13%);
+
+// Neutral
+$transparent-white: hsla(0, 0%, 100%, 0.75);
+$very-light-gray: hsl(0, 0%, 95%);
+
+@mixin theme($theme) {
+    background-color: $theme;
+
+    button {
+        color: $theme;
+    }
+}
+
+.bright-orange {
+    @include theme($bright-orange);
+}
+
+.dark-cyan {
+    @include theme($dark-cyan);
+}
+
+.very-dark-cyan {
+    @include theme($very-dark-cyan);
+}
+
+body {
+    font: {
+        size: math.div(15px, 16px) * 100%;
+        family: 'Lexend Deca', sans-serif;
+    }
+
+    background-color: $very-light-gray;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex: {
+        direction: column;
+        wrap: nowrap;
+    }
+
+    min-height: 100vh;
+    width: min(90vw, 500px);
+    margin: 0 auto;
+    justify-content: center;
+    align-items: stretch;
+    padding: 2em 0;
+}
+
+section {
+    padding: 3em;
+    overflow: hidden;
+
+    h2 {
+        font: {
+            family: 'Big Shoulders Display', cursive;
+            size: 2.5em;
+        }
+        text-transform: uppercase;
+        color: $very-light-gray;
+    }
+
+    p {
+        color: $transparent-white;
+        line-height: 1.5em;
+        margin-bottom: 2em;
+    }
+
+    button {
+        border: none;
+        border-radius: 3em;
+        background-color: $very-light-gray;
+        padding: 1em 2em;
+        font-family: inherit;
+    }
+
+    &:first-child {
+        border: {
+            top-left-radius: inherit;
+            top-right-radius: inherit;
+        }
+    }
+
+    &:last-child {
+        border: {
+            bottom-left-radius: inherit;
+            bottom-right-radius: inherit;
+        }
+    }
+}
+
+.sedans::before {
+        content: url('../images/icon-sedans.svg');
+}
+
+.suvs::before {
+    content: url('../images/icon-suvs.svg');
+}
+
+.luxury::before {
+    content: url('../images/icon-luxury.svg');
+}
+
+footer {
+    text-align: center;
+    font-size: 0.85em;
+    padding: 1em;
+}
+
+@media (min-width: 800px) {
+    main {
+        flex: {
+            direction: row;
+            wrap: nowrap;
+        }
+        width: min(90vw, 800px);
+        align-items: center;
+        padding: 0;
+    }
+
+    section {
+        &:first-child {
+            border: {
+                radius: unset;
+                top-left-radius: inherit;
+                bottom-left-radius: inherit;
+            }
+        }
+
+        &:last-child {
+            border: {
+                radius: unset;
+                top-right-radius: inherit;
+                bottom-right-radius: inherit;
+            }
+        }
+    }
+}
