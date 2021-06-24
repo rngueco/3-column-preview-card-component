@@ -55,14 +55,14 @@ section {
 }
 section h2 {
   font-family: "Big Shoulders Display", cursive;
-  font-size: 2.5em;
+  font-size: 2em;
   text-transform: uppercase;
   color: #f2f2f2;
 }
 section p {
   color: rgba(255, 255, 255, 0.75);
   line-height: 1.5em;
-  margin-bottom: 4em;
+  margin-bottom: 2em;
 }
 section button {
   border: 1px solid #f2f2f2;
@@ -70,8 +70,6 @@ section button {
   background-color: #f2f2f2;
   padding: 1em 2em;
   font-family: inherit;
-  position: absolute;
-  bottom: 2em;
 }
 section button:hover {
   color: #f2f2f2;
@@ -113,6 +111,14 @@ footer {
     padding: 0;
   }
 
+  section p {
+    font-size: 0.85em;
+    margin-bottom: 10em;
+  }
+  section button {
+    position: absolute;
+    bottom: 3em;
+  }
   section:first-child {
     border-radius: unset;
     border-top-left-radius: inherit;

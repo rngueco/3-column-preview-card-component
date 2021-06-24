@@ -73,7 +73,7 @@ section {
     h2 {
         font: {
             family: 'Big Shoulders Display', cursive;
-            size: 2.5em;
+            size: 2em;
         }
         text-transform: uppercase;
         color: $very-light-gray;
@@ -82,7 +82,7 @@ section {
     p {
         color: $transparent-white;
         line-height: 1.5em;
-        margin-bottom: 4em;
+        margin-bottom: 2em;
     }
 
     button {
@@ -91,9 +91,6 @@ section {
         background-color: $very-light-gray;
         padding: 1em 2em;
         font-family: inherit;
-
-        position: absolute;
-        bottom: 2em;
 
         &:hover {
             color: $very-light-gray;
@@ -146,6 +143,16 @@ footer {
     }
 
     section {
+        p {
+            font-size: 0.85em;
+            margin-bottom: 10em;
+        }
+
+        button {
+            position: absolute;
+            bottom: 3em;
+        }
+
         &:first-child {
             border: {
                 radius: unset;
