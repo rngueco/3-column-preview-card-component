@@ -42,15 +42,22 @@ body {
 }
 
 main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+.main {
     border-radius: 8px;
-    overflow: hidden;
     display: flex;
     flex: {
         direction: column;
         wrap: nowrap;
     }
 
-    min-height: 100vh;
     width: min(90vw, 500px);
     margin: 0 auto;
     justify-content: center;
@@ -61,6 +68,7 @@ main {
 section {
     padding: 3em;
     overflow: hidden;
+    position: relative;
 
     h2 {
         font: {
@@ -74,15 +82,24 @@ section {
     p {
         color: $transparent-white;
         line-height: 1.5em;
-        margin-bottom: 2em;
+        margin-bottom: 4em;
     }
 
     button {
-        border: none;
+        border: 1px solid $very-light-gray;
         border-radius: 3em;
         background-color: $very-light-gray;
         padding: 1em 2em;
         font-family: inherit;
+
+        position: absolute;
+        bottom: 2em;
+
+        &:hover {
+            color: $very-light-gray;
+            cursor: pointer;
+            background-color: unset;
+        }
     }
 
     &:first-child {
@@ -119,13 +136,12 @@ footer {
 }
 
 @media (min-width: 800px) {
-    main {
+    .main {
         flex: {
             direction: row;
             wrap: nowrap;
         }
         width: min(90vw, 800px);
-        align-items: center;
         padding: 0;
     }
 

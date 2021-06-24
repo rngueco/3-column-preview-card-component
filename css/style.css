@@ -29,12 +29,18 @@ body {
 }
 
 main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.main {
   border-radius: 8px;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  min-height: 100vh;
   width: min(90vw, 500px);
   margin: 0 auto;
   justify-content: center;
@@ -45,6 +51,7 @@ main {
 section {
   padding: 3em;
   overflow: hidden;
+  position: relative;
 }
 section h2 {
   font-family: "Big Shoulders Display", cursive;
@@ -55,14 +62,21 @@ section h2 {
 section p {
   color: rgba(255, 255, 255, 0.75);
   line-height: 1.5em;
-  margin-bottom: 2em;
+  margin-bottom: 4em;
 }
 section button {
-  border: none;
+  border: 1px solid #f2f2f2;
   border-radius: 3em;
   background-color: #f2f2f2;
   padding: 1em 2em;
   font-family: inherit;
+  position: absolute;
+  bottom: 2em;
+}
+section button:hover {
+  color: #f2f2f2;
+  cursor: pointer;
+  background-color: unset;
 }
 section:first-child {
   border-top-left-radius: inherit;
@@ -92,11 +106,10 @@ footer {
 }
 
 @media (min-width: 800px) {
-  main {
+  .main {
     flex-direction: row;
     flex-wrap: nowrap;
     width: min(90vw, 800px);
-    align-items: center;
     padding: 0;
   }
 
