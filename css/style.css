@@ -29,6 +29,7 @@ body {
 }
 
 main {
+  background-color: unset;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -46,7 +47,6 @@ main {
   justify-content: center;
   align-items: stretch;
   padding: 2em 0;
-  box-shadow: 1px 2px 8px 1px rgba(255, 255, 255, 0.75);
 }
 
 section {
@@ -66,11 +66,12 @@ section p {
   margin-bottom: 2em;
 }
 section button {
-  border: 1px solid #f2f2f2;
+  border: 2px solid #f2f2f2;
   border-radius: 3em;
   background-color: #f2f2f2;
   padding: 1em 2em;
   font-family: inherit;
+  transition: background-color 0.3s ease;
 }
 section button:hover {
   color: #f2f2f2;
@@ -110,6 +111,7 @@ footer {
     flex-wrap: nowrap;
     width: min(90vw, 800px);
     padding: 0;
+    box-shadow: 1px 2px 8px 1px rgba(255, 255, 255, 0.75);
   }
 
   section p {
